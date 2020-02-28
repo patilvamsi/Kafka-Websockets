@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="myApp" ng-controller="myCtrl">
+<head>
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+<title>JavaInUse Chat Application | JavaInUse</title>
+<link rel="stylesheet" href="/css/style.css" />
+<!-- <link
+	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+	rel="stylesheet" id="bootstrap-css">
+<script
+	src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script> -->
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.7.8/angular.min.js"
+	integrity="sha256-23hi0Ag650tclABdGCdMNSjxvikytyQ44vYGo9HyOrU="
+	crossorigin="anonymous"></script>
+
+<script src="/js/script.js"></script>
+<script src="/js/jquery.min.js"></script>
+</head>
+<body>
+	<table>
+		<tr>
+		<td>First Name
+		</td>
+		<td><input type="text" value="" ng-model="user.firstName">
+		</td>
+		</tr>
+		<tr>
+		<td>Last Name
+		</td>
+		<td><input type="text" value="" ng-model="user.lastName"></td>
+		</tr>
+		<tr>
+		<td>
+		</td>
+		<td><input type="button" value="Push Data" ng-click="submit()"></td>
+		</tr>
+	</table>
+	<br />
+	<br />
+	<br />
+	<br />
+	<br />
+	<br /> Result :- {{result}}
+</body>
+</html>
