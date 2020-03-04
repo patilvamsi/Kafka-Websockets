@@ -1,10 +1,8 @@
 package com.example.notification.websocket;
 
-import java.security.Principal;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
-import java.util.Random;
 
 import javax.servlet.http.HttpSession;
 
@@ -63,14 +61,15 @@ public class Interceptor extends DefaultHandshakeHandler implements HandshakeInt
 		return message;
 	}
 	
-	@Override
-    protected Principal determineUser(ServerHttpRequest request, WebSocketHandler wsHandler, Map<String,Object> attributes){
-
-        // Some Code that would give me the username set in Stomp Header
-        // For now i am randomly generating a username and setting in principal.
-        String username = "user"+"-"+ new Random().nextInt(100);
-        return username;
-
-    }
+	/*
+	 * @Override protected Principal determineUser(ServerHttpRequest request,
+	 * WebSocketHandler wsHandler, Map<String,Object> attributes){
+	 * 
+	 * // Some Code that would give me the username set in Stomp Header // For now i
+	 * am randomly generating a username and setting in principal. String username =
+	 * "user"+"-"+ new Random().nextInt(100); return new Prin
+	 * 
+	 * }
+	 */
 
 }

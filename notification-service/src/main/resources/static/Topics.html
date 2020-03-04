@@ -1,0 +1,34 @@
+<md-dialog aria-label="Topics">
+<form ng-cloak>
+	<md-toolbar>
+	<div class="md-toolbar-tools">
+		<h2>Topics</h2>
+		<span flex></span>
+		<md-button class="md-icon-button" ng-click="cancel()">X </md-button>
+	</div>
+	</md-toolbar>
+
+	<md-dialog-content>
+	<div class="md-dialog-content">
+		<h2>Please select available Topics</h2>
+		<p></p>
+
+		<p>
+			<md-radio-group ng-model="data.topic"> <md-radio-button
+				value="Sports" class="md-primary">Sports</md-radio-button> 
+				<md-radio-button
+				value="National"> National </md-radio-button>
+				 <md-radio-button
+				value="International">International</md-radio-button> 
+				 <md-radio-button
+				value="pushNotification">Push Notification</md-radio-button> 
+				</md-radio-group>
+		</p>
+
+	</div>
+	</md-dialog-content>
+
+	<md-dialog-actions layout="row">  <span flex></span> <md-button md-autofocus class="md-raised md-primary"
+		ng-click="answer(data)"> Ok </md-button> </md-dialog-actions>
+</form>
+</md-dialog>

@@ -8,11 +8,16 @@ import org.springframework.stereotype.Component;
 @Component
 public class Listener {
 
-    @Autowired
-    private SimpMessagingTemplate template;
+	@Autowired
+	private SimpMessagingTemplate template;
 
-    @StreamListener(target = "users")
-    public void processMessage(Message pushMessage){
-        this.template.convertAndSend("/topic/pushNotification", pushMessage);
-    }
+	@StreamListener(target = "users")
+	public void processMessage(Message pushMessage) throws Exception {
+		if(null != pushMessage && null != pushMessage.getTopic())
+			this.template.convertAndSend("/topic/"+pushMessage.getTopic(), pushMessage.getMessage());
+		else {
+			this.template.convertAndSend("/topic/pushNotification", "got Exception");
+			throw new Exception("Message recieved from Kafka: "+pushMessage.toString());
+		}
+	}
 }
